@@ -1,0 +1,24 @@
+<main>
+  <div class="section">
+    <router-outlet></router-outlet>
+  </div>
+</main>
+
+<footer>
+  <span>Erik Pérez &copy; {{today | date: 'yyyy'}} - {{'copyright' | transloco}}</span>
+  <span class="spacer"></span>
+  <div>
+    <a href="https://www.linkedin.com/in/erik-pérez-223619100" target="_blank" mat-icon-button matTooltip="LinkedIn">
+      <fa-icon [icon]="faLinkedin" size="lg"></fa-icon>
+    </a>
+    <a href="https://twitter.com/fer866?s=09" target="_blank" mat-icon-button matTooltip="Twitter">
+      <fa-icon [icon]="faTwitter" size="lg"></fa-icon>
+    </a>
+    <a mat-button *ngIf="lang == 'es'" (click)="changeLang('en')" [matTooltip]="'language' | transloco">
+      <mat-icon>language</mat-icon>&nbsp;English
+    </a>
+    <a mat-button *ngIf="lang == 'en'" (click)="changeLang('es')" [matTooltip]="'language' | transloco">
+      <mat-icon>language</mat-icon>&nbsp;Español
+    </a>
+  </div>
+</footer>

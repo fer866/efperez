@@ -1,0 +1,150 @@
+.collection {
+    padding-left: 0;
+    list-style-type: none;
+    margin: .5rem 0 1rem;
+    border: 1px solid rgba(var(--foreground-rgb), 0.15);
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+    .item {
+        display: grid;
+        gap: .2rem;
+        grid-auto-flow: dense;
+        grid-auto-rows: auto;
+        grid-template-columns: .25fr 1fr .25fr;
+        align-items: center;
+        list-style-type: none;
+        line-height: 1.5rem;
+        padding: 10px 20px;
+        margin: 0;
+        border-bottom: 1px solid rgba(var(--foreground-rgb), 0.15);
+        .avatar {
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: #fff;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            font-size: 28px;
+        }
+        .description {
+            .title {
+                font-size: 16px;
+                font-weight: 500;
+                color: var(--primary)
+            }
+            p {
+                margin: 0;
+            }
+        }
+    }
+}
+.timeline {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    position: relative;
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 10px;
+        background-color: #c5cae9;
+        left: 20%;
+        margin-left: -10px;
+        @media only screen and (max-width: 600px) {
+            left: 6%;
+        }
+    }
+    li {
+        list-style-type: none;
+        position: relative;
+        time {
+            @media only screen and (max-width: 600px) {
+                display: none;
+            }
+            display: block;
+            width: 25%;
+            padding-right: 75px;
+            position: absolute;
+            span {
+                display: block;
+                text-align: right;
+                font-size: .9em;
+                color: rgba(var(--foreground-rgb), 0.75);
+            }
+        }
+        mat-icon {
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 1.4em;
+            position: absolute;
+            color: #fff;
+            background-color: var(--primary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 8px #c5cae9;
+            text-align: center;
+            left: 20%;
+            top: 0;
+            margin: 0 0 0 -25px;
+            @media only screen and (max-width: 600px) {
+                left: 6%;
+            }
+        }
+        .time-card {
+            margin: 0 0 15px 25%;
+            @media only screen and (max-width: 600px) {
+                margin: 0 0 15px 11%;
+            }
+            background-color: var(--primary);
+            color: #fff;
+            padding: 12px;
+            font-size: 1.2em;
+            font-weight: 400;
+            line-height: 1.4;
+            position: relative;
+            border-radius: 5px;
+            &::before {
+                right: 100%;
+                border: 10px solid transparent;
+                content: '';
+                height: 0;
+                width: 0;
+                position: absolute;
+                pointer-events: none;
+                border-right-color: var(--primary);
+                top: 10px;
+            }
+            h2 {
+                border-bottom: 1px solid rgba(255,255,255,0.4);
+                font-size: 19px;
+                margin: 0;
+                padding: 0;
+                line-height: 26px;
+                font-weight: 400;
+            }
+            .mobile {
+                display: none;
+                margin: 0;
+                text-align: right;
+                @media only screen and (max-width: 600px) {
+                    display: block;
+                }
+            }
+            p {
+                font-size: 15px;
+                font-weight: 200;
+                line-height: 20px;
+            }
+        }
+        &:nth-child(odd) .time-card {
+            background-color: var(--primary-darker);
+        }
+        &:nth-child(odd) .time-card::before {
+            border-right-color: var(--primary-darker);
+        }
+    }
+}

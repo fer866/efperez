@@ -1,0 +1,74 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+//Typography
+$custom-typography: mat-typography-config(
+  $font-family: 'Poppins, Helvetica Neue, sans-serif'
+);
+@include angular-material-typography($custom-typography);
+
+//Light Theme
+$light-primary: mat-palette($mat-indigo, 700, 100, 900);
+$light-accent: mat-palette($mat-blue-grey, 400);
+$light-warn: mat-palette($mat-red);
+
+$light-theme: mat-light-theme($light-primary, $light-accent, $light-warn);
+@include angular-material-theme($light-theme);
+
+//Dark Theme Definition
+.dark-theme {
+  $dark-primary: mat-palette($mat-blue, 500, 100, 800);
+  $dark-accent: mat-palette($mat-blue-grey, 400);
+  $dark-warn: mat-palette($mat-red);
+
+  $dark-theme: mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+  @include angular-material-theme($dark-theme);
+
+  --primary: #{mat-color($dark-primary)};
+  --accent: #{mat-color($dark-accent)};
+  --warn: #{mat-color($dark-warn)};
+  --foreground: #{map-get(map-get($dark-theme, foreground), text)};
+  --foreground-rgb: 255, 255, 255;
+  --background: #{map-get(map-get($dark-theme, background), background)};
+  // --contrast: #{mat-color($dark-primary, default-contrast)};
+  --contrast: rgba(0,0,0,0.87);
+  --footer: #{mat-color(mat-palette($mat-indigo, 800))};
+  --border: #424242;
+  --background-card: #424242;
+  --primary-darker: #{mat-color($dark-primary, darker)};
+}
+
+:root {
+  --primary: #{mat-color($light-primary)};
+  --accent: #{mat-color($light-accent)};
+  --warn: #{mat-color($light-warn)};
+  --foreground: #{map-get(map-get($light-theme, foreground), text)};
+  --foreground-rgb: 0, 0, 0;
+  --background: #{map-get(map-get($light-theme, background), background)};
+  // --contrast: #{mat-color($light-primary, default-contrast)};
+  --contrast: white;
+  --footer: #{mat-color(mat-palette($mat-indigo, 900))};
+  --border: #eeeeee;
+  --background-card: white;
+  --primary-darker: #{mat-color($light-primary, darker)};
+}
+
+/* You can add global styles to this file, and also import other style files */
+
+html { scroll-behavior: smooth; font-size: 14.5px; }
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Poppins, "Helvetica Neue", sans-serif;
+}
+* {
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import 'styles/custom';

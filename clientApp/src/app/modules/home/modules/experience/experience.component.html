@@ -1,0 +1,71 @@
+<div class="row no-m">
+    <!-- Experiencia Intro -->
+    <div class="col s12 no-m" *transloco="let ts; read: 'experience.exp'">
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>bookmark_border</mat-icon>
+                {{ts('title')}}
+            </span>
+        </h2>
+        
+        <p class="flow-text">
+            {{ts('desc1')}}<strong class="accent-text">{{ts('desc2')}}</strong>{{ts('desc3')}}<strong class="accent-text">{{ts('desc4')}}</strong>{{ts('desc5')}}
+        </p>
+    </div>
+
+    <!-- Programming Languages -->
+    <div class="col s12 no-m">
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>code</mat-icon>
+                {{'experience.languages.title' | transloco}}
+            </span>
+        </h2>
+        
+        <div *efpdInView [@slideLeft]="experience.length">
+            <div *ngFor="let g of experience">
+                <h3 class="primary-text">{{g.cat}}</h3>
+                <div class="inline">
+                    <div class="progress-container" *ngFor="let e of g.items">
+                        <div class="progress-circle" [ngClass]="[(e.percentage || 0) > 50 ? 'over50' : '', 'p' + (e.percentage || 0)]" *efpdInView @fadeIn>
+                            <span>{{e.percentage || 0}}%</span>
+                            <div class="left-half-clipper">
+                                <div class="first50-bar"></div>
+                                <div class="value-bar"></div>
+                            </div>
+                        </div>
+                        <div class="title">{{e.expName}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Github Repositories -->
+    <div class="col s12 no-m" *transloco="let ts; read: 'experience.git'">
+        <h2 class="primary-text section-title">
+            <span>
+                <fa-icon [icon]="faGithub" [fixedWidth]="true"></fa-icon>
+                {{ts('title')}}
+            </span>
+        </h2>
+        
+        <div class="cards">
+            <ng-container *ngFor="let g of repos">
+                <mat-card class="card-github" *efpdInView @slideAll matRipple [matRippleColor]="'rgba(255,255,255,0.2)'">
+                    <fa-icon [icon]="faGithub" [fixedWidth]="true"></fa-icon>
+                    <mat-card-title>
+                        <a target="_blank" [href]="g.html_url" [matTooltip]="ts('tooltip')">{{g.name}}</a>
+                    </mat-card-title>
+                    <mat-card-content>
+                        <p class="description">{{g.description}}</p>
+                        <div class="right-align">
+                            <mat-icon matTooltip="Forks">call_split</mat-icon>{{g.forks_count || 0}}&nbsp;
+                            <mat-icon matTooltip="Stargazers">star_border</mat-icon>{{g.stargazers_count || 0}}
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </ng-container>
+        </div>
+    </div>
+</div>

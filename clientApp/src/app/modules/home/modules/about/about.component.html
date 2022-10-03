@@ -1,0 +1,68 @@
+<div class="row no-m">
+
+    <!-- About me -->
+    <div class="col s12 m6 l7 no-m" *transloco="let t; read: 'about.me'">
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>person</mat-icon>
+                {{t('title')}}
+            </span>
+        </h2>
+        <p class="flow-text justify-text">
+            {{t('desc1')}}<strong class="accent-text">Erik Fernando Pérez Díaz.</strong>
+            <br><br>
+            <strong>{{t('desc2')}}</strong>{{t('desc3', { years: developer })}}
+            <br><br>
+            {{t('desc4')}}<strong class="accent-text">{{t('desc5')}}</strong>{{t('desc6')}}
+        </p>
+    </div>
+
+    <!-- Last Tweets -->
+    <div class="col s12 m6 l5 no-m" *transloco="let ts; read: 'about.tweet'">
+        <h2 class="primary-text section-title">
+            <span>
+                <fa-icon [icon]="faTwitter" [fixedWidth]="true"></fa-icon>
+                {{ts('title')}}
+            </span>
+        </h2>
+        <mat-card class="mat-elevation-z2 twitter">
+            <fa-icon [icon]="faTwitter"></fa-icon>
+            <mat-card-header>
+                <mat-card-title>Erik Pérez</mat-card-title>
+                <mat-card-subtitle><a href="https://twitter.com/fer866?s=09" target="_blank">@fer866</a></mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-content>
+                <p dir="ltr" class="tweet-desc">{{ts('desc1')}} 🧑🏻‍💻🧐 <a href="https://twitter.com/hashtag/Angular?src=hash&amp;ref_src=twsrc%5Etfw">#Angular</a>&nbsp;<a href="https://twitter.com/hashtag/ReactNative?src=hash&amp;ref_src=twsrc%5Etfw">#ReactNative</a>&nbsp;<a href="https://twitter.com/hashtag/VueJS?src=hash&amp;ref_src=twsrc%5Etfw">#VueJS</a></p>
+                <div class="tweet-img">
+                    <img src="https://pbs.twimg.com/media/E8xHj2fX0Aspj7u?format=jpg&name=900x900" alt="tweet image">
+                </div>
+                <p class="tweet-footer">{{tweetDate | date: 'h:mm a · d MMM yyyy':undefined:getCulture()}}</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+
+    <!-- Hobbys -->
+    <div class="col s12 no-m" *transloco="let ts; read: 'about.hobbies'">
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>badge</mat-icon>
+                {{ts('title')}}
+            </span>
+        </h2>
+        <p class="flow-text">
+            {{ts('desc1')}}<strong class="accent-text">{{ts('desc2')}}</strong>{{ts('desc3')}}
+        </p>
+
+        <div class="cards" *efpdInView [@slideLeft]="hobbys.length">
+            <mat-card class="card" *ngFor="let c of hobbys; trackBy: hobbysTrackBy" matRipple [matRippleColor]="'rgba(255,255,255,0.2)'">
+                <mat-card-title><mat-icon>{{c?.icon}}</mat-icon>&nbsp;{{c?.colName}}</mat-card-title>
+                <mat-card-content>
+                    <p>{{c?.description}}</p>
+                    <div class="right-align">
+                        <button mat-button [matTooltip]="'like' | transloco" (click)="onLikeCollection(c)"><mat-icon>thumb_up</mat-icon>&nbsp;{{c?.likes || 0}}</button>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>

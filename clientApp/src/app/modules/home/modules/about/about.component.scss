@@ -1,0 +1,25 @@
+.tweet-desc {
+    a {
+        color: rgb(27, 149, 224);
+    }
+}
+.tweet-footer {
+    color: rgba(var(--foreground-rgb), 0.5);
+}
+.tweet-img {
+    width: 100%;
+    img {
+        width: 100%;
+        border-radius: 8px;
+    }
+}
+.twitter {
+    position: relative;
+    fa-icon {
+        color: rgb(29, 161, 242);
+        position: absolute;
+        top: 8px;
+        right: 16px;
+        font-size: 28px;
+    }
+}

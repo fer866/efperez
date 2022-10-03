@@ -1,0 +1,99 @@
+<h2 class="primary-text section-title">
+    <span>
+        <mat-icon>history</mat-icon>
+        {{'history.hist.title' | transloco}}
+    </span>
+</h2>
+
+<p class="flow-text" *transloco="let t; read: 'history.hist'">
+    {{t('desc1')}}<strong>{{t('desc2')}}</strong>{{t('desc3')}}<strong class="accent-text">{{t('desc4')}}</strong>{{t('desc5')}}
+</p>
+
+<div class="row no-m" *transloco="let ts; read: 'history'">
+
+    <div class="col s12 m12 l5 no-m">
+        <!-- CV -->
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>article</mat-icon>
+                {{ts('cv.title')}}
+            </span>
+        </h2>
+        <p>{{ts('cv.desc1')}}</p>
+        <div class="center">
+            <div>
+                <a target="_blank" mat-raised-button color="primary" [href]="language === 'en' ? 'assets/cv_en.pdf' : 'assets/cv_es.pdf'">
+                    <mat-icon>file_download</mat-icon>&nbsp;{{ts('cv.button1')}}
+                </a>
+            </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <h2 class="primary-text section-title">
+            <span>
+                <fa-icon [icon]="faLinkedin" [fixedWidth]="true"></fa-icon>
+                {{ts('linkedin.title')}}
+            </span>
+        </h2>
+        <p>{{ts('linkedin.desc1')}}</p>
+        <div class="center">
+            <div>
+                <a href="https://www.linkedin.com/in/erik-pérez-223619100" target="_blank" mat-raised-button color="primary">
+                    <fa-icon [icon]="faLinkedin"></fa-icon>&nbsp;{{ts('linkedin.button1')}}
+                </a>
+            </div>
+        </div>
+
+        <!-- Fortalezas -->
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>checklist</mat-icon>
+                {{ts('activities.title')}}
+            </span>
+        </h2>
+        <ul class="collection" *efpdInView [@slideLeft]="collection.length">
+            <li class="item" *ngFor="let c of collection; trackBy: onTrackCol">
+                <mat-icon class="avatar">{{c.icon}}</mat-icon>
+                <div class="description">
+                    <span class="title">{{c.colName}}</span>
+                    <p>{{c.description}}</p>
+                </div>
+                <div>
+                    <button type="button" mat-button color="accent" [matTooltip]="'like' | transloco" (click)="onLikeClicked(c)">
+                        <mat-icon>thumb_up</mat-icon>&nbsp;{{c.likes || 0}}
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="col s12 m12 l7 no-m">
+        <!-- History -->
+        <h2 class="primary-text section-title">
+            <span>
+                <mat-icon>work</mat-icon>
+                {{ts('jobs.title')}}
+            </span>
+        </h2>
+        <ul class="timeline">
+            <ng-container *ngFor="let h of history | async">
+                <li *efpdInView @slideAll>
+                    <time>
+                        <span>{{h.historyDate | date: 'MMMM yyyy' : undefined : getCulture()}}</span>
+                    </time>
+                    <ng-container [ngSwitch]="h.typeH || 1">
+                        <mat-icon *ngSwitchCase="1">work</mat-icon>
+                        <mat-icon *ngSwitchCase="2">school</mat-icon>
+                        <mat-icon *ngSwitchCase="3">code</mat-icon>
+                    </ng-container>
+                    <div class="time-card">
+                        <h2>{{h.title}}</h2>
+                        <p class="mobile">{{h.historyDate | date: 'MMMM yyyy' : undefined : getCulture()}}</p>
+                        <p>{{h.company}}</p>
+                        <p *ngIf="h.description">{{h.description}}</p>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+    </div>
+</div>

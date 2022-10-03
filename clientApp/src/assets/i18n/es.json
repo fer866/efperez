@@ -1,0 +1,111 @@
+{
+    "error": "Ups surgió un error!, favor de intentar más tarde",
+    "denied": "Lo siento el contenido está negado. Intenta más tarde",
+    "not_found": "Lo siento el contenido que intentas consultar no se encontró",
+    "maintenance": "Estoy haciendo mantenimiento al sitio. Vuelve más tarde",
+    "like": "Me gusta",
+    "clear": "Borrar",
+    "copyright": "Todos los derechos reservados.",
+    "dark_mode": "Activar modo nocturno",
+    "light_mode": "Activar modo claro",
+    "language": "Change language to English",
+    "discard": "Descartar",
+    "tooManyAttemps": "Te he bloqueado por exceso de intentos. Intenta más tarde",
+    "home": {
+        "web": "Desarrollador Web",
+        "web_tip": ".Net Core es mi Favorito",
+        "android": "Desarrollador Android",
+        "android_tip": "Necesito migrar a Kotlin",
+        "abap": "Desarrollador ABAP",
+        "abap_tip": "SAP Fiori en camino"
+    },
+    "about": {
+        "title": "Acerca de mi",
+        "me": {
+            "title": "¿Quién soy?",
+            "desc1": "¡Hola! Soy ",
+            "desc2": "Soy desarrollador en Web, Android y ABAP SAP. ",
+            "desc3": "He trabajado como desarrollador desde hace {{years}} años",
+            "desc4": "Residente en el Edo. de Mex. Disfruto mucho trabajar con ",
+            "desc5": "nuevas tecnologías ",
+            "desc6": "en compañía de un buen equipo de trabajo."
+        },
+        "tweet": {
+            "title": "Último Tweet",
+            "desc1": "Siempre es difícil la decisión al momento de iniciar un nuevo proyecto."
+        },
+        "hobbies": {
+            "title": "Pasatiempos",
+            "desc1": "Estos son algunos de mis ",
+            "desc2": "pasatiempos ",
+            "desc3": "que practico en mi tiempo libre o que me gustaría iniciar:"
+        }
+    },
+    "experience": {
+        "title": "Experiencia",
+        "exp": {
+            "title": "Experiencia",
+            "desc1": "Aquí podrás ver todo lo que es relacionado a mi ",
+            "desc2": "perfil ",
+            "desc3": "como ",
+            "desc4": "desarrollador. ",
+            "desc5": "Además de los repositorios git que he publicado."
+        },
+        "languages": {
+            "title": "Lenguajes de Programación"
+        },
+        "git": {
+            "title": "Repositorios Github",
+            "tooltip": "Ir al repositorio"
+        }
+    },
+    "history": {
+        "title": "¿A qué me dedico?",
+        "hist": {
+            "title": "¿A qué me dedico?",
+            "desc1": "En esta sección descubrirás todas las ",
+            "desc2": "actividades ",
+            "desc3": "que he realizado en mi carrera, además de incluir mi ",
+            "desc4": "CV y perfil de LinkedIn. ",
+            "desc5": "¡Adelante puedes hechar un vistazo!"
+        },
+        "cv": {
+            "title": "Mi CV",
+            "desc1": "He dejado mi curriculum en formato pdf para su descarga, así que puedes consultarlo para fines informativos.",
+            "button1": "Descargar CV"
+        },
+        "linkedin": {
+            "title": "Perfil LinkedIn",
+            "desc1": "De ser necesario puedes visitar mi perfil en LinkeIn:",
+            "button1": "Ir al perfil"
+        },
+        "activities": {
+            "title": "Fortalezas"
+        },
+        "jobs": {
+            "title": "Puestos y Cursos"
+        }
+    },
+    "contact": {
+        "title": "Contacto",
+        "comments": {
+            "title": "Enviar Comentarios",
+            "desc1": "Puedes usar el siguiente formulario para enviarme tus comentarios, no importa si solo es para saludar. ",
+            "desc2": "¡Cualquier comentario es bienvenido!",
+            "name": "Nombre",
+            "name_req": "El nombre es requerido",
+            "name_min": "Debe tener por lo menos 3 caracteres",
+            "name_max": "Debe tener máximo 60 caracteres",
+            "email": "Email",
+            "email_req": "El email es requerido",
+            "email_invalid": "El email es inválido",
+            "comment": "Comentarios",
+            "comment_req": "Tus comentarios son requeridos",
+            "comment_min": "Debe tener por lo menos 10 caracteres",
+            "comment_max": "Debe tener máximo 300 caracteres",
+            "send": "Enviar",
+            "reset": "Limpiar",
+            "email_init": "Porfavor espera, estoy enviando tus comentarios"
+        }
+    }
+}

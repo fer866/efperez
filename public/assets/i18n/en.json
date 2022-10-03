@@ -1,0 +1,111 @@
+{
+    "error": "Sorry an error came up! Please try again later",
+    "denied": "Sorry, the content you requested it's denied",
+    "not_found": "Sorry, the content you requested it's not available",
+    "maintenance": "I'm doing maintenance to the site. Please go back later",
+    "like": "Like",
+    "clear": "Clear",
+    "copyright": "All rights reserved.",
+    "dark_mode": "Activate dark mode",
+    "light_mode": "Activate light mode",
+    "language": "Cambiar idioma a Español",
+    "discard": "Discard",
+    "tooManyAttemps": "You are blocked for too many attemps. Please, try later",
+    "home": {
+        "web": "Web Developer",
+        "web_tip": ".Net Core my favorite",
+        "android": "Android Developer",
+        "android_tip": "I need to migrate to Kotlin",
+        "abap": "ABAP Developer",
+        "abap_tip": "SAP Fiori on the way"
+    },
+    "about": {
+        "title": "About me",
+        "me": {
+            "title": "Who am I",
+            "desc1": "Hello! I'm ",
+            "desc2": "I'm a Web, Android & ABAP SAP Developer. ",
+            "desc3": "I have been working as a developer for {{years}} years.",
+            "desc4": "I live in Mexico City. I love work with ",
+            "desc5": "new technologies ",
+            "desc6": "like React, .Net Core or Sap Fiori and always is a plasure work with a great team."
+        },
+        "tweet": {
+            "title": "Last Tweet",
+            "desc1": "At the beginning of new project, it's always difficult making the right choice."
+        },
+        "hobbies": {
+            "title": "Hobbies",
+            "desc1": "These are some of my ",
+            "desc2": "hobbys ",
+            "desc3": "that I practice or I would like to start:"
+        }
+    },
+    "experience": {
+        "title": "Experience",
+        "exp": {
+            "title": "Experience",
+            "desc1": "Here you can see everything that is related to my ",
+            "desc2": "profile ",
+            "desc3": "as a ",
+            "desc4": "Developer. ",
+            "desc5": "In addition the git repositories I have publish."
+        },
+        "languages": {
+            "title": "Programming Languages"
+        },
+        "git": {
+            "title": "Github Repositories",
+            "tooltip": "Go to repository"
+        }
+    },
+    "history": {
+        "title": "What do I do",
+        "hist": {
+            "title": "What do I do",
+            "desc1": "In this section you will discover all the ",
+            "desc2": "activities ",
+            "desc3": "i have done in my career, i'm including my ",
+            "desc4": "CV and LinkedIn profile. ",
+            "desc5": "Go ahead and take a look!"
+        },
+        "cv": {
+            "title": "My CV",
+            "desc1": "I have left my resume in pdf for download, so you can consult it for informational purposes.",
+            "button1": "Download CV"
+        },
+        "linkedin": {
+            "title": "LinkedIn Profile",
+            "desc1": "If necessary you can visit my profile on LinkedIn:",
+            "button1": "Link to profile"
+        },
+        "activities": {
+            "title": "Strengths"
+        },
+        "jobs": {
+            "title": "Jobs and courses"
+        }
+    },
+    "contact": {
+        "title": "Contact",
+        "comments": {
+            "title": "Send Comments",
+            "desc1": "You can use the following form to send me your comments, it doesn't matter if it's just to say hello. ",
+            "desc2": "Any comment is welcomed!",
+            "name": "Name",
+            "name_req": "Name is required",
+            "name_min": "Must have at least 3 characters",
+            "name_max": "Must have max 60 characters",
+            "email": "Email",
+            "email_req": "Email is required",
+            "email_invalid": "Invalid email",
+            "comment": "Comments",
+            "comment_req": "Comments are required",
+            "comment_min": "Must have at least 10 characters",
+            "comment_max": "Must have max 300 characters",
+            "send": "Send",
+            "reset": "Reset",
+            "email_init": "Please wait, I'm sending your comments"
+        }
+    }
+}

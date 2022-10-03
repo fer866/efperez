@@ -1,0 +1,40 @@
+<div class="center">
+    <picture>
+        <source srcset="assets/img/me_photo.webp" type="image/webp">
+        <img src="assets/img/me_photo.jpg" alt="Erik Fernando Pérez Díaz" class="me" width="200" height="200" title="Erik Fernando Pérez Díaz">
+    </picture>
+
+    <h1>Erik Fernando Pérez Díaz</h1>
+
+    <div class="chip-list" *transloco="let ts; read: 'home'">
+        <div class="chip accent" matRipple [matTooltip]="ts('web_tip')" #tip1="matTooltip" (click)="tip1.toggle()">
+            <mat-icon class="chip-avatar">code</mat-icon>
+            {{ts('web')}}
+        </div>
+        <div class="chip accent" matRipple [matTooltip]="ts('android_tip')" #tip2="matTooltip" (click)="tip2.toggle()">
+            <mat-icon class="chip-avatar">android</mat-icon>
+            {{ts('android')}}
+        </div>
+        <div class="chip accent" matRipple [matTooltip]="ts('abap_tip')" #tip3="matTooltip" (click)="tip3.toggle()">
+            <mat-icon class="chip-avatar">laptop_chromebook</mat-icon>
+            {{ts('abap')}}
+        </div>
+        <label class="switch" [matTooltip]="(darkToggle.value ? 'light_mode' : 'dark_mode') | transloco">
+            <input type="checkbox" [formControl]="darkToggle" (change)="onThemeChange()">
+            <span class="slider round">
+                <mat-icon>{{darkToggle.value ? 'dark_mode' : 'light_mode'}}</mat-icon>
+            </span>
+        </label>
+    </div>
+</div>
+
+<mat-card class="main mat-elevation-z3">
+    <!-- Navigation -->
+    <nav mat-tab-nav-bar mat-align-tabs="center" class="sticky" dynamicHeight>
+        <a mat-tab-link routerLink="/home/about" routerLinkActive #rla1="routerLinkActive" [active]="rla1.isActive">{{'about.title' | transloco}}</a>
+        <a mat-tab-link routerLink="/home/experience" routerLinkActive #rla2="routerLinkActive" [active]="rla2.isActive">{{'experience.title' | transloco}}</a>
+        <a mat-tab-link routerLink="/home/history" routerLinkActive #rla3="routerLinkActive" [active]="rla3.isActive">{{'history.title' | transloco}}</a>
+        <a mat-tab-link routerLink="/home/contact" routerLinkActive #rla4="routerLinkActive" [active]="rla4.isActive">{{'contact.title' | transloco}}</a>
+    </nav>
+    <router-outlet #o="outlet"></router-outlet>
+</mat-card>
